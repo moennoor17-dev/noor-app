@@ -1,0 +1,6 @@
+{
+  "name": "GadgetHub",
+  "description": "Modern online gadgets shopping marketplace with electronics, smartphones, accessories, cart, wishlist, multi-step checkout with Bangladeshi payment options, and admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

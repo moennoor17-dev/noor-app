@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* Prevent white-on-white text in native select options across all browsers */
+select option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.dark select option {
+  background-color: #1e293b;
+  color: #f8fafc;
+}

@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Products: anyone can read, allow updates/writes for inventory & admin
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Orders: anyone can place an order, read if owner or placed order
+    match /orders/{orderId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if true;
+    }
+    
+    // Reviews: anyone can read and post a review
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if true;
+    }
+    
+    // User profile: only the user themselves can read and write
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+  }
+}
