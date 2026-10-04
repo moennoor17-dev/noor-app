@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://moin-noor.vercel.app/sitemap.xml
+Sitemap: https://gadgethub.ai.studio/sitemap.xml
